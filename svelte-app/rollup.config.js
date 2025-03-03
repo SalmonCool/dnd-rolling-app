@@ -5,6 +5,7 @@ import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import css from 'rollup-plugin-css-only';
+import adapter from '@sveltejs/adapter-netlify';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -74,5 +75,8 @@ export default {
 	],
 	watch: {
 		clearScreen: false
+	},
+	kit: {
+		adapter: adapter()
 	}
 };
